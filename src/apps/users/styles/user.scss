@@ -8,10 +8,22 @@ h3,
 h4,
 h5,
 h4,
-p,
-a {
-  font-family: "Public Sans", sans-serif !important;
+p {
+  color: #495057;
+  font-family: "Public Sans", sans-serif;
   font-weight: 600 !important;
+}
+a {
+  font-family: "Public Sans", sans-serif;
+}
+.p-4 {
+  padding: 1.5rem !important;
+}
+.border-bottom {
+  border-bottom: 1px solid #f0eff5 !important;
+}
+.font-size-24 {
+  font-size: 24px !important;
 }
 .avatar-xs {
   height: 2.2rem;
@@ -68,6 +80,10 @@ ul {
 }
 .font-size-16 {
   font-size: 16px !important;
+}
+.avatar-lg {
+  height: 6rem;
+  width: 6rem;
 }
 .mobileNav {
   display: none;
@@ -433,10 +449,12 @@ ul {
         display: inline-block;
         padding: 16px 40px 16px 20px;
         margin: 0 0 20px 0;
-        font: 16px/20px "Noto Sans", sans-serif;
+
         border-radius: 10px;
         .msg-date {
           margin-top: 10px;
+
+          font-size: 12px;
         }
         .img-box {
           margin-bottom: 10px;
@@ -447,6 +465,7 @@ ul {
         }
         .msg-txt {
           max-width: 250px;
+          font-size: 15px;
         }
 
         &.send {
@@ -538,5 +557,22 @@ ul {
         }
       }
     }
+  }
+}
+
+.bg-light {
+  background-color: #e6ebf5 !important;
+}
+/*{profile}*/
+.profile-img-box {
+  position: relative;
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
