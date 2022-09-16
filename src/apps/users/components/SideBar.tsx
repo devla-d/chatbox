@@ -18,9 +18,12 @@ const SideBar = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#">
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-comment-dots"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#">

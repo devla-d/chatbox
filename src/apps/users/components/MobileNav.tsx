@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const MobileNav = () => {
   return (
@@ -6,15 +7,14 @@ const MobileNav = () => {
       <div className="mobileNav">
         <ul className="menu">
           <li>
-            <a href="#" className="active">
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-comment-dots"></i>
-            </a>
+            </NavLink>
           </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-users"></i>
-            </a>
-          </li>
+
           <li>
             <a href="#">
               <i className="fas fa-users"></i>
