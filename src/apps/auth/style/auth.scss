@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&display=swap");
+
+div.homePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 475px;
+  .welcome-box {
+    text-align: center;
+    h2 {
+      font-size: 66px;
+      margin: 20px 0px;
+    }
+    ul {
+      display: inline-block;
+      margin: 45px 10px;
+      padding: 0;
+      width: 50%;
+      li {
+        margin-bottom: 15px;
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+div.auth-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  min-height: 449px;
+  .auth-register-box {
+    width: 390px;
+    h2 {
+      font-family: Nunito Sans, sans-serif;
+      text-transform: capitalize;
+      color: #3f3453;
+      span {
+        color: #e04d3d;
+      }
+    }
+    form {
+      p.invalid-feedback {
+        margin-bottom: 0;
+      }
+      p.or-text {
+        margin-bottom: -10px;
+      }
+      a.btn {
+        margin-bottom: -10px;
+      }
+    }
+  }
+}

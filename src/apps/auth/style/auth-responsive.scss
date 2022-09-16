@@ -1,0 +1,26 @@
+/* [responsive] */
+/* Small Devices Potrait */
+@media (max-width: 767px) {
+  div.homePage {
+    min-height: 660px;
+  }
+  div.auth-register {
+    min-height: 90vh;
+    .auth-register-box {
+      h2 {
+        font-size: 40px;
+
+        margin-bottom: 60px;
+      }
+      .mb\@m {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (min-height: 800px) {
+  div.homePage {
+    min-height: 800px;
+  }
+}

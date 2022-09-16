@@ -1,0 +1,85 @@
+/* [responsive] */
+/* Small Devices Potrait */
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+  }
+  .chat-left .recent-chat .recent-chat-list {
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .chat-left .recent-chat .recent-chat-list ul {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  ul.chat-conversation-box {
+    li {
+      &.send {
+        max-width: 80% !important;
+      }
+      &.recieve {
+        max-width: 80% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .chat-left {
+    min-width: 380px;
+    max-width: 380px;
+  }
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .d-lg-inline-block {
+    display: inline-block !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .user-chat {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transform: translateX(100%);
+    z-index: 99;
+    &.show {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+}
+/*** Large Devices, Wide Screens ***/
+
+@media (min-width: 1200px) {
+}
+
+/*** Devices Width 767px and Up ***/
+
+@media (min-width: 767px) {
+}
+
+/*** Only Medium Devices, Desktops ***/
+
+@media (max-width: 1200px) and (min-width: 992px) {
+}
+
+/* Small Devices, Tablets */
+
+@media (max-width: 992px) {
+}
