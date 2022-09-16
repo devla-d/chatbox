@@ -32,15 +32,40 @@ const MobileNav = () => {
           </li>
 
           <li>
-            <a href="#" className="profile">
-              <img
-                src="/user/avatar.webp"
-                className="rounded-circle "
-                width={50}
-                height={50}
-                alt=""
-              />
-            </a>
+            <div className="dropdown">
+              <a
+                href="#"
+                className="profile dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="/user/avatar.webp"
+                  className="rounded-circle "
+                  width={50}
+                  height={50}
+                  alt=""
+                />
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>

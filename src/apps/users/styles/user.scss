@@ -84,15 +84,24 @@ ul {
     align-items: center;
     li {
       margin: 5px 0;
+
       a {
-        color: #878a92;
-        font-size: 20px;
-        height: 48px;
-        line-height: 48px;
-        width: 48px;
-        margin: 0 auto;
-        padding: 10px;
-        text-align: center;
+        &:not(.dropdown-item) {
+          color: #878a92;
+          font-size: 20px;
+          height: 48px;
+          line-height: 48px;
+          width: 48px;
+          margin: 0 auto;
+          padding: 10px;
+          text-align: center;
+        }
+
+        &.dropdown-toggle {
+          &::after {
+            display: none;
+          }
+        }
         &.active {
           background-color: #f7f7ff;
 
