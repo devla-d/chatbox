@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   return (
@@ -9,9 +10,12 @@ const SideBar = () => {
         </div>
         <ul className="menu">
           <li>
-            <a href="#" className="active">
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-user"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#">
