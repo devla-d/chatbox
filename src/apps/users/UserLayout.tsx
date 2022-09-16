@@ -4,8 +4,6 @@ import "./styles/user.scss";
 import "./styles/user-responsive.scss";
 import SideBar from "./components/SideBar";
 import MobileNav from "./components/MobileNav";
-import OnlineUser from "./components/OnlineUser";
-import RecentChatCard from "./components/RecentChatCard";
 
 const UserLayout = () => {
   const handleTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -20,57 +18,13 @@ const UserLayout = () => {
 
   return (
     <>
-      {/* <Outlet /> */}
       {/* sidebar */}
       <SideBar />
       {/* sidebar */}
       <div className="chat-left">
-        <div className="chat-left-head">
-          <h3>Chats</h3>
-          <button className="add-user-btn">
-            <i className="fas fa-user-plus"></i>
-          </button>
-        </div>
-        <div className="online-friends">
-          <p>
-            online users{" "}
-            <span className="">
-              <i className="fas fa-angle-right"></i>
-            </span>
-          </p>
-          <ul className="online-menu">
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-            <OnlineUser />
-          </ul>
-        </div>
-        <div className="recent-chat">
-          <h4>Recent</h4>
-          <div className="recent-chat-list">
-            <ul>
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-              <RecentChatCard />
-            </ul>
-          </div>
-        </div>
+        <Outlet />
       </div>
-      <div className="user-chat show">
+      <div className="user-chat ">
         <div className="d-lg-flex">
           <div className="position-relative w-100 overflow-hidde">
             <div className="user-chat-head">
