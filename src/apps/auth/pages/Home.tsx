@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="homePage">
       <div className="welcome-box">
-        <h2>Welcome to Chatty</h2>
+        <h2>Welcome to ChatBox</h2>
         <h3>Join OR login</h3>
 
         <ul>
