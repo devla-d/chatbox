@@ -1,4 +1,5 @@
 /* [responsive] */
+
 /* Small Devices Potrait */
 @media (max-width: 767px) {
   .sidebar {
@@ -24,10 +25,29 @@
   ul.chat-conversation-box {
     li {
       &.send {
-        max-width: 80% !important;
+        max-width: 66% !important;
       }
       &.recieve {
-        max-width: 80% !important;
+        max-width: 66% !important;
+      }
+      .img-box {
+        img {
+          max-width: 200px !important;
+          max-height: 200px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  ul.chat-conversation-box {
+    li {
+      .img-box {
+        img {
+          max-width: 170px !important;
+          max-height: 170px !important;
+        }
       }
     }
   }

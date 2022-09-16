@@ -8,6 +8,10 @@ import OnlineUser from "./components/OnlineUser";
 import RecentChatCard from "./components/RecentChatCard";
 
 const UserLayout = () => {
+  const handleTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.target.style.height = "0px";
+    e.target.style.height = `${e.target.scrollHeight + "px"}`;
+  };
   useEffect(() => {
     document.body.classList.add("user-dashboard");
 
@@ -164,37 +168,87 @@ const UserLayout = () => {
                   <div className="img-box">
                     <img src="/user/user2.jpg" alt="" />
                   </div>
-                  Are we meeting today?
+                  <div className="msg-txt">Are we meeting today?</div>
                   <div className="msg-date">
                     <i className="fa-solid fa-clock"></i>
                     <span> 10/20 2020</span>
                   </div>
                 </li>
                 <li className="send">
-                  yes, what time suits you?
+                  <div className="msg-txt">yes, what time suits you?</div>
                   <div className="msg-date">
                     <i className="fa-solid fa-clock"></i>
                     <span> 10/20 2020</span>
                   </div>
                 </li>
                 <li className="recieve">
-                  I was thinking after lunch, I have a meeting in the morning
+                  <div className="msg-txt">
+                    I was thinking after lunch, I have a meeting in the morning
+                  </div>
                   <div className="msg-date">
                     <i className="fa-solid fa-clock"></i>
                     <span> 10/20 2020</span>
                   </div>
                 </li>
                 <li className="send">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                  dolores dignissimos impedit sapiente hic inventore sequi a
-                  cum! Vero corporis laboriosam aliquid qui quam nihil sed
-                  obcaecati ab labore tempore?
+                  <div className="img-box">
+                    <img src="/user/h.jpg" alt="" />
+                  </div>
+                  <div className="msg-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odit dolores dignissimos impedit sapiente hic inventore
+                    sequi a cum! Vero corporis laboriosam aliquid qui quam nihil
+                    sed obcaecati ab labore tempore?
+                  </div>
+                  <div className="msg-date">
+                    <i className="fa-solid fa-clock"></i>
+                    <span> 10/20 2020</span>
+                  </div>
+                </li>
+                <li className="recieve">
+                  <div className="img-box">
+                    <img src="/user/user1.jpg" alt="" />
+                  </div>
+                  <div className="msg-txt">
+                    {/* I was thinking after lunch, I have a meeting in the morning */}
+                  </div>
                   <div className="msg-date">
                     <i className="fa-solid fa-clock"></i>
                     <span> 10/20 2020</span>
                   </div>
                 </li>
               </ul>
+            </div>
+            <div className="room-footer">
+              <div className="room-footer-box">
+                <div className="textarea-box">
+                  <textarea
+                    onChange={(e) => {
+                      handleTextarea(e);
+                    }}
+                    placeholder="Type message"
+                    className="form-control form-control-lg bg-light border-light rounded"
+                  ></textarea>
+                </div>
+
+                <div className="input-icon">
+                  <div className="emoji-box">
+                    <button>
+                      <i className="fa-regular fa-face-smile"></i>
+                    </button>
+                  </div>
+                  <div className="file-box">
+                    <button>
+                      <i className="fa-regular fa-file"></i>
+                    </button>
+                  </div>
+                  <div className="send-box">
+                    <button className="btn btn-primary">
+                      <i className="fa-regular fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

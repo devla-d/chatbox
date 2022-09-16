@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@200&display=swap");
+@import "https://fonts.googleapis.com/css?family=Noto+Sans";
 $primary: #e04d3d;
 
 h1,
@@ -337,6 +338,7 @@ ul {
   box-shadow: 0 2px 4px rgb(15 34 58 / 12%);
   transition: all 0.4s;
   width: 100% !important;
+  height: 100vh !important;
   overflow: hidden;
   .user-chat-head {
     padding: 20px;
@@ -408,7 +410,7 @@ ul {
     }
   }
   .chat-conversation {
-    height: calc(100vh - 146px);
+    height: calc(100vh - 169px);
     padding: 18px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -426,6 +428,16 @@ ul {
         border-radius: 10px;
         .msg-date {
           margin-top: 10px;
+        }
+        .img-box {
+          margin-bottom: 10px;
+          img {
+            max-width: 200px;
+            max-height: 200px;
+          }
+        }
+        .msg-txt {
+          max-width: 250px;
         }
 
         &.send {
@@ -453,6 +465,66 @@ ul {
           .msg-date {
             margin-top: 10px;
             color: #e1e0e0;
+          }
+        }
+      }
+    }
+  }
+  .room-footer {
+    width: calc(100% - 1px);
+    border-bottom-right-radius: 4px;
+    z-index: 10;
+    margin-top: 4px;
+    .room-footer-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #fff;
+      padding: 8px 20px;
+      border-top: 1px solid #f0eff5 !important;
+      .textarea-box {
+        width: 100%;
+        height: 59px;
+
+        padding: 8px 0;
+        position: relative;
+        textarea {
+          background-color: #e6ebf5 !important;
+          border: 0px;
+          width: 100%;
+          font-size: 17px;
+
+          resize: none;
+          line-height: 24px;
+          overflow-x: hidden;
+          height: 44px;
+
+          position: absolute;
+          bottom: 8px;
+        }
+      }
+
+      .input-icon {
+        display: flex;
+        margin: 0 0 0 5px;
+        .emoji-box {
+          button {
+            background-color: transparent;
+            color: #7a7f9a;
+            border: none;
+            font-size: 18px;
+            padding: 0.47rem 0.75rem;
+            margin: 0;
+          }
+        }
+        .file-box {
+          button {
+            background-color: transparent;
+            color: #7a7f9a;
+            border: none;
+            font-size: 18px;
+            padding: 0.47rem 0.75rem;
+            margin: 0;
           }
         }
       }
