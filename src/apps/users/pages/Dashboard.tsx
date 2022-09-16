@@ -1,16 +1,17 @@
 import React from "react";
 import OnlineUser from "../components/OnlineUser";
+import PageHead from "../components/PageHead";
 import RecentChatCard from "../components/RecentChatCard";
 
 const Dashboard = () => {
   return (
     <>
-      <div className="chat-left-head">
-        <h3>Chats</h3>
+      <PageHead name="Chats">
         <button className="add-user-btn">
           <i className="fas fa-user-plus"></i>
         </button>
-      </div>
+      </PageHead>
+
       <div className="online-friends">
         <p>
           online users{" "}

@@ -54,3 +54,8 @@ export type LoginForm = {
   username: string;
   password: string;
 };
+
+export interface PageHeadProps {
+  name: string;
+  children?: JSX.Element;
+}
