@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const MobileNav = () => {
   return (
@@ -59,18 +59,15 @@ const MobileNav = () => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
+                  <Link className="dropdown-item" to="/profile">
+                    Profile
+                    <i className="fa-regular fa-user float-right text-muted"></i>
+                  </Link>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
+                    Settings
+                    <i className="fas fa-cog float-right text-muted"></i>
                   </a>
                 </li>
               </ul>

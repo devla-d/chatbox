@@ -17,6 +17,12 @@
       display: none !important;
     }
   }
+  .call-log-list {
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
   .chat-left .recent-chat .recent-chat-list ul {
     padding: 0;
     margin: 0;

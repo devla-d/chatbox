@@ -694,3 +694,61 @@ ul {
     }
   }
 }
+.call-log-list {
+  height: calc(100vh - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: block;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        position: relative;
+        display: block;
+        padding: 15px 20px;
+        color: #7a7f9a;
+        transition: all 0.4s;
+        border-top: 1px solid #f5f7fb;
+        border-radius: 4px;
+        &:hover {
+          background-color: #e6ebf5;
+        }
+        .media {
+          .media-body {
+            h5 {
+              font-size: 15px;
+            }
+            p {
+              margin-top: 5px;
+              margin-bottom: 0;
+              font-size: 13px;
+              color: #7a7f9a;
+            }
+          }
+          .lo-icon {
+            span {
+              i {
+                font-size: 11px !important;
+                color: #7a7f9a;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
