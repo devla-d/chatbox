@@ -10,6 +10,7 @@ const MobileNav = () => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) => (isActive ? "active" : "")}
+              title="Chats"
             >
               <i className="fas fa-comment-dots"></i>
             </NavLink>
@@ -19,17 +20,18 @@ const MobileNav = () => {
             <NavLink
               to="/groups"
               className={({ isActive }) => (isActive ? "active" : "")}
+              title="Groups"
             >
               <i className="fas fa-users"></i>
             </NavLink>
           </li>
           <li>
-            <a href="#">
+            <a href="#" title="Friends">
               <i className="fas fa-address-book"></i>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" title="Call History">
               <i className="fas fa-phone"></i>
             </a>
           </li>

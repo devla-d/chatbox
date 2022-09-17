@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
@@ -13,6 +12,7 @@ const SideBar = () => {
             <NavLink
               to="/profile"
               className={({ isActive }) => (isActive ? "active" : "")}
+              title="Profile"
             >
               <i className="fas fa-user"></i>
             </NavLink>
@@ -21,6 +21,7 @@ const SideBar = () => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) => (isActive ? "active" : "")}
+              title="Chats"
             >
               <i className="fas fa-comment-dots"></i>
             </NavLink>
@@ -30,22 +31,23 @@ const SideBar = () => {
             <NavLink
               to="/groups"
               className={({ isActive }) => (isActive ? "active" : "")}
+              title="Groups"
             >
               <i className="fas fa-users"></i>
             </NavLink>
           </li>
           <li>
-            <a href="#">
+            <a href="#" title="Friends">
               <i className="fas fa-address-book"></i>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" title="Call history">
               <i className="fas fa-phone"></i>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" title="Settings">
               <i className="fas fa-cog"></i>
             </a>
           </li>

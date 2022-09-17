@@ -3,6 +3,5 @@ export const setFontsize = () => {
   fontSize.forEach((el) => {
     var font_size = el.getAttribute("data-font");
     el.setAttribute("style", `font-size:${font_size}px`);
-    console.log(font_size);
   });
 };
