@@ -37,14 +37,22 @@ const SideBar = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#" title="Friends">
+            <NavLink
+              to="/friends"
+              title="Friends"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-address-book"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" title="Call history">
+            <NavLink
+              to="/call-logs"
+              title="Call history"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-phone"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#" title="Settings">

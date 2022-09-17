@@ -26,14 +26,18 @@ const MobileNav = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#" title="Friends">
+            <NavLink to="/friends" title="Friends">
               <i className="fas fa-address-book"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#" title="Call History">
+            <NavLink
+              to="/call-logs"
+              title="Call History"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-phone"></i>
-            </a>
+            </NavLink>
           </li>
 
           <li>
