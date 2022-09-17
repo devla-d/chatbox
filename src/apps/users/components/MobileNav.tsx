@@ -65,10 +65,10 @@ const MobileNav = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="/settings">
                     Settings
                     <i className="fas fa-cog float-right text-muted"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

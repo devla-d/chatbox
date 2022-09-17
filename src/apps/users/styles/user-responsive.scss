@@ -44,6 +44,11 @@
       }
     }
   }
+  .setting-box {
+    > div {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 @media (max-width: 380px) {

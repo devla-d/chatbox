@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Friends from "../pages/Friends";
 import Groups from "../pages/Groups";
 import Profile from "../pages/Profile";
+import Settings from "../pages/Settings";
 
 const UserRoutes: RouteInterface[] = [
   {
@@ -31,6 +32,11 @@ const UserRoutes: RouteInterface[] = [
     id: getRandomNumber(),
     element: <CallLog />,
     path: "/call-logs",
+  },
+  {
+    id: getRandomNumber(),
+    element: <Settings />,
+    path: "/settings",
   },
 ];
 

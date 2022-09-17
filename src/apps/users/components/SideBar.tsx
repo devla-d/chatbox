@@ -55,9 +55,13 @@ const SideBar = () => {
             </NavLink>
           </li>
           <li>
-            <a href="#" title="Settings">
+            <NavLink
+              to="/settings"
+              title="Settings"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-cog"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#" className="profile">

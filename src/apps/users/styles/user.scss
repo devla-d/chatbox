@@ -694,6 +694,9 @@ ul {
     }
   }
 }
+.form-control {
+  border-radius: 0 !important;
+}
 .call-log-list {
   height: calc(100vh - 100px);
   overflow-x: hidden;
@@ -750,5 +753,29 @@ ul {
         }
       }
     }
+  }
+}
+.setting-box {
+  height: calc(100vh - 320px);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: block;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
+  }
+  > div {
+    margin-bottom: 10px;
   }
 }
