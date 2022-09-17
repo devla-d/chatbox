@@ -4,6 +4,7 @@ import "./styles/user.scss";
 import "./styles/user-responsive.scss";
 import SideBar from "./components/SideBar";
 import MobileNav from "./components/MobileNav";
+import { setFontsize } from "@/helper";
 
 const UserLayout = () => {
   const handleTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -12,7 +13,7 @@ const UserLayout = () => {
   };
   useEffect(() => {
     document.body.classList.add("user-dashboard");
-
+    setFontsize();
     return () => {};
   }, []);
 

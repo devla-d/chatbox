@@ -25,15 +25,14 @@ const SideBar = () => {
               <i className="fas fa-comment-dots"></i>
             </NavLink>
           </li>
+
           <li>
-            <a href="#">
+            <NavLink
+              to="/groups"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               <i className="fas fa-users"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i className="fas fa-users"></i>
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href="#">

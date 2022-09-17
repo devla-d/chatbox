@@ -16,6 +16,9 @@ p {
 a {
   font-family: "Public Sans", sans-serif;
 }
+.btn {
+  border-radius: 0 !important;
+}
 .font-15 {
   font-size: 15px !important;
 }
@@ -180,7 +183,7 @@ ul {
         color: #878a92;
         width: 100%;
         height: 56px;
-        line-height: 52px;
+        line-height: 64px;
         border-radius: 0;
         padding: 15px;
         position: relative;
@@ -613,6 +616,81 @@ ul {
 
     .about-item {
       margin: 10px 0;
+    }
+  }
+}
+
+.search-box {
+  position: relative;
+  input {
+    border: 0;
+    padding-left: 28px;
+  }
+  i {
+    position: absolute;
+    top: 9px;
+    left: 6px;
+  }
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+.avatar-title {
+  align-items: center;
+  background-color: #7269ef;
+  color: #fff;
+  display: flex;
+  font-weight: 500;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+.bg-soft-primary {
+  background-color: rgba(114, 105, 239, 0.25) !important;
+}
+
+.text-primary {
+  color: #7269ef !important;
+}
+.media-body {
+  flex: 1;
+}
+.group-list {
+  height: calc(100vh - 190px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: block;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        position: relative;
+        display: block;
+        padding: 15px 20px;
+        color: #7a7f9a;
+        transition: all 0.4s;
+        border-top: 1px solid #f5f7fb;
+        border-radius: 4px;
+        &:hover {
+          background-color: #e6ebf5;
+        }
+      }
     }
   }
 }
