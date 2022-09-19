@@ -4,5 +4,4 @@ export const setFontsize = () => {
     var font_size = el.getAttribute("data-font");
     el.setAttribute("style", `font-size:${font_size}px`);
   });
-  console.log("sizing");
 };
