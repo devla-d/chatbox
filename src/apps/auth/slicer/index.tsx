@@ -32,14 +32,13 @@ export const LoginRequest = createAsyncThunk(
         formdata
       );
 
-      // if (data.msg && data.user && data.accessToken && data.refreshToken) {
-      //   return data;
-      // } else if (data.error) {
-      //   return rejectWithValue(data.error);
-      // } else {
-      //   return rejectWithValue(data.error);
-      // }
-      console.log(data);
+      if (data.msg && data.user && data.accessToken && data.refreshToken) {
+        return data;
+      } else if (data.error) {
+        return rejectWithValue(data.error);
+      } else {
+        return rejectWithValue(data.error);
+      }
     } catch (e) {
       const error = e as AxiosError;
 
@@ -66,22 +65,22 @@ const userSlicer = createSlice({
     });
     builder.addCase(LoginRequest.fulfilled, (state, { payload }) => {
       console.log("payload");
-      // if (
-      //   payload.msg &&
-      //   payload.user &&
-      //   payload.accessToken &&
-      //   payload.refreshToken
-      // ) {
-      //   state.loading = false;
-      //   state.accessToken = payload.accessToken;
-      //   state.refreshToken = payload.refreshToken;
-      //   state.isLoggedin = true;
-      //   state.user = payload.user;
+      if (
+        payload.msg &&
+        payload.user &&
+        payload.accessToken &&
+        payload.refreshToken
+      ) {
+        state.loading = false;
+        state.accessToken = payload.accessToken;
+        state.refreshToken = payload.refreshToken;
+        state.isLoggedin = true;
+        state.user = payload.user;
 
-      //   sessionStorage.setItem("user", JSON.stringify(payload.user));
-      //   sessionStorage.setItem("accessToken", payload.accessToken);
-      //   sessionStorage.setItem("refreshToken", payload.refreshToken);
-      // }
+        sessionStorage.setItem("user", JSON.stringify(payload.user));
+        sessionStorage.setItem("accessToken", payload.accessToken);
+        sessionStorage.setItem("refreshToken", payload.refreshToken);
+      }
     });
 
     builder.addCase(LoginRequest.rejected, (state, { payload }) => {

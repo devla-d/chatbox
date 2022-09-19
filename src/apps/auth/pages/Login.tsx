@@ -13,20 +13,20 @@ const Login = () => {
   const loading = useAppSelector((state) => state.auth.loading);
 
   const LoginUser = (formData: LoginForm) => {
-    dispatch(LoginRequest(formData));
-    // .unwrap()
-    // .then(() => {
-    //   navigate("/dashboard");
-    // })
-    // .catch((error) => {
-    //   if (Array.isArray(error)) {
-    //     error.forEach((err) => {
-    //       toast.error(err);
-    //     });
-    //   } else {
-    //     toast.error(error);
-    //   }
-    // });
+    dispatch(LoginRequest(formData))
+      .unwrap()
+      .then(() => {
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        if (Array.isArray(error)) {
+          error.forEach((err) => {
+            toast.error(err);
+          });
+        } else {
+          toast.error(error);
+        }
+      });
   };
 
   const { values, touched, handleBlur, handleChange, handleSubmit, errors } =

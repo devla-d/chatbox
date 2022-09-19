@@ -35,7 +35,6 @@ export type UserModel = {
   online: boolean;
   image: string | null;
   friends: Array<number>;
-  GroupId: null;
 };
 
 export type InitalUserReducerstate = {
