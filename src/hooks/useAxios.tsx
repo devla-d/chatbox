@@ -1,7 +1,8 @@
 import axios from "axios";
+import { useAppSelector } from "./useStore";
 
 const useAxios = () => {
-  const token = null;
+  const token = useAppSelector((state) => state.auth.accessToken);
   const ReQuest = axios.create({
     baseURL: "http://localhost:3000/",
     headers: {

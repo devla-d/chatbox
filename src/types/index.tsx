@@ -35,6 +35,7 @@ export type UserModel = {
   online: boolean;
   image: string | null;
   friends: Array<number>;
+  bio: string | null;
 };
 
 export type InitalUserReducerstate = {
@@ -61,4 +62,8 @@ export type LoginForm = {
 export interface PageHeadProps {
   name: string;
   children?: JSX.Element;
+}
+
+export interface DialogProps {
+  children: JSX.Element;
 }

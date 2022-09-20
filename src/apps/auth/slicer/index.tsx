@@ -58,13 +58,23 @@ const initialState: InitalUserReducerstate = {
 const userSlicer = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    updateAccessToken: (state, action: PayloadAction<string>) => {
+      state.accessToken = action.payload;
+    },
+    resetSlicer: (state) => {
+      sessionStorage.removeItem("refreshToken");
+      sessionStorage.removeItem("accessToken");
+      sessionStorage.removeItem("user");
+
+      state = initialState;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(LoginRequest.pending, (state) => {
       state.loading = true;
     });
     builder.addCase(LoginRequest.fulfilled, (state, { payload }) => {
-      console.log("payload");
       if (
         payload.msg &&
         payload.user &&
@@ -89,5 +99,5 @@ const userSlicer = createSlice({
   },
 });
 
-// export const {   } = userSlicer.actions;
+export const { updateAccessToken, resetSlicer } = userSlicer.actions;
 export default userSlicer.reducer;
