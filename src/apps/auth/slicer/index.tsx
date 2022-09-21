@@ -69,6 +69,12 @@ const userSlicer = createSlice({
 
       state = initialState;
     },
+    updateUser: (state, action: PayloadAction<UserModel>) => {
+      sessionStorage.removeItem("user");
+
+      state.user = action.payload;
+      sessionStorage.setItem("user", JSON.stringify(action.payload));
+    },
   },
   extraReducers(builder) {
     builder.addCase(LoginRequest.pending, (state) => {
@@ -99,5 +105,6 @@ const userSlicer = createSlice({
   },
 });
 
-export const { updateAccessToken, resetSlicer } = userSlicer.actions;
+export const { updateAccessToken, resetSlicer, updateUser } =
+  userSlicer.actions;
 export default userSlicer.reducer;

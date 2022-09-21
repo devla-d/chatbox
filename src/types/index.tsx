@@ -8,6 +8,7 @@ export type SubmitButtonProp = {
   loading: boolean;
   type: "button" | "submit" | "reset";
   children: React.ReactNode | JSX.Element;
+  function_?: () => void;
 };
 
 export type TakenDataTypes = {
@@ -66,4 +67,9 @@ export interface PageHeadProps {
 
 export interface DialogProps {
   children: JSX.Element;
+}
+
+export interface ImgUploadRes {
+  msg: string;
+  user: UserModel;
 }

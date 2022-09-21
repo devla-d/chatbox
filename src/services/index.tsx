@@ -21,4 +21,5 @@ const axiosPrivate = axios.create({
     Authorization: token ? `Bearer ${token}` : false,
   },
 });
+
 export { getRandomNumber, unAuthRequest, axiosPrivate };

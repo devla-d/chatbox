@@ -1,16 +1,24 @@
 import PageHead from "../components/PageHead";
-import { useAppSelector } from "@/hooks/useStore";
+import { useAppDispatch, useAppSelector } from "@/hooks/useStore";
 import Dialogs from "../components/Dialogs";
-import { openDialog, uploadImg } from "../helper";
+import { openDialog, uploadImg, closeDialog } from "../helper";
 import useAxiosPrivate from "@/hooks/useAxiosPrivate";
+import { useState } from "react";
+import SubmitButton from "@/components/SubmitButton";
+import { ImgUploadRes } from "@/types";
+import { updateUser } from "@/apps/auth/slicer";
 
 const Profile = () => {
   const user = useAppSelector((state) => state.auth.user!);
+  const [loading, setLoading] = useState(false);
+  const [profileImg, setprofileImg] = useState<File>();
+  const dispatch = useAppDispatch();
   const axiosPrivate = useAxiosPrivate();
 
   const previeIMG = (event: React.ChangeEvent<HTMLInputElement>) => {
     var { target } = event;
     if (!target.files) return;
+    setprofileImg(target.files[0]);
     openDialog();
     var outPut = document.getElementById("uploadPreview") as HTMLImageElement;
     outPut.src = URL.createObjectURL(target.files[0]);
@@ -19,9 +27,24 @@ const Profile = () => {
     };
   };
 
-  const getUser = async () => {
-    const { data } = await axiosPrivate.get("/test");
-    console.log(data);
+  const sendImg = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axiosPrivate.post<ImgUploadRes>(
+        "/change-profile",
+        { image: profileImg },
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      dispatch(updateUser(data.user));
+      closeDialog();
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
   };
 
   return (
@@ -32,7 +55,7 @@ const Profile = () => {
           <img
             src={
               user.image
-                ? user.image
+                ? `http://localhost:3000${user.image}`
                 : `https://ui-avatars.com/api/?name=${user.username}`
             }
             alt=""
@@ -41,8 +64,7 @@ const Profile = () => {
           <button
             id="uploadimgBtn"
             className="btn bg-light avatar-xs p-0 rounded-circle profile-photo-edit"
-            // onClick={() => uploadImg()}
-            onClick={() => getUser()}
+            onClick={() => uploadImg()}
           >
             <i className="fas fa-pencil"></i>
           </button>
@@ -84,7 +106,9 @@ const Profile = () => {
             <img src="" id="uploadPreview" alt="" />
           </div>
           <div className="upload-img">
-            <button className="btn btn-primary">submit</button>
+            <SubmitButton type="button" loading={loading} function_={sendImg}>
+              <span>Update</span>
+            </SubmitButton>
           </div>
         </div>
       </Dialogs>
